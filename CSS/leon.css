@@ -1,0 +1,476 @@
+/* start global variable */
+:root {
+  --main-color:#10cab7;
+  --secendary-color:#2c4755;
+
+}
+/* end global variable */
+
+/* start global rules */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+body {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* container is to make it more readable to the user  */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end global rules */
+/* start global component */
+.special-heading {
+  color: #ebeced;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  text-align: center;
+  margin: -30px 0 0;
+  font-size: 20px;
+  color: #797979;
+}
+@media (max-width:767px) {
+ .special-heading {
+  font-size: 60px;
+ } 
+ .special-heading + p {
+  margin: -20px 0 0;
+ }
+}
+/* end global component */
+/* start header */
+.header {
+  padding: 20px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .links {
+  position: relative;
+}
+.header .links:hover span:nth-child(2) {
+  width: 100%;
+}
+.header .logo {
+  width: 60px;
+}
+.header .sandwich-icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.header .sandwich-icon span {
+  width: 100%;
+  background-color: black;
+  height: 2px;
+  margin-bottom: 5px;
+}
+.header .container .sandwich-icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.header .links:hover span:nth-child(2) {
+  width: 100%;
+}
+.header .links:hover ul {
+  display: block;
+}
+.header .links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  min-width: 200px;
+  right: 0;
+  top: calc(100% + 15px);
+  display: none;
+  /* the landing pic will hide it if i don't do the following */
+  z-index: 3;
+  /*adding from me*/
+  transition: 0.3s;
+}
+.header .links ul::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+}
+.header .links ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+.header .links ul li a:hover {
+  padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+/* end header  */
+/* start landing section  */
+.landing {
+  position: relative;
+  /* to .intro-text  */
+  background-image: url(../Images/My\ project.png);
+  background-position: bottom;
+  /* it must be png to use height on it  */
+  background-size: cover;
+  height: calc(100vh - 64px);
+  /* there will be the margin of the h1 too so we will make it 0 */
+}
+.landing .intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  /* -50% from its own height  */
+  text-align: center;
+
+  /* for the phone ill be have to add the following  */
+  width: 320px;
+  max-width: 100%;
+}
+.landing .intro-text h1 {
+  margin: 0;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 50px;
+}
+.landing .intro-text p {
+  font-size: 19px;
+    line-height: 1.8;
+}
+/* end landing section  */
+/* start features  */
+
+.features {
+padding-top: 60px;  
+padding-bottom: 60px;
+background-color: #f6f6f6;  
+}
+.features .container {
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 20px;
+}
+.features .container .feat {
+  padding: 20px;
+  text-align: center;
+}
+.features .container .feat  i {
+  color: var(--main-color);
+}
+.features .feat h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.features .feat p {
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
+}
+/* end features  */
+/* start services */
+.services {
+  padding-top: 60px;
+  padding-bottom: 60px;
+   
+}
+
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+
+.services .services-content .one-service {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width:767px) {
+  .services .services-content .one-service {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services-content .one-service i {
+  color: var(--main-color);
+  flex-basis: 60px ;
+}
+.services .services-content .one-service .service--text {
+  flex: 1;
+}
+.services .services-content .one-service .service--text h3 {
+  margin: 0 0 20px;
+}
+.services .services-content .one-service .service--text p {
+  color: #777;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.services .services-content .image {
+  position: relative;
+  text-align: center;
+}
+.services .services-content img {
+  width: 240px;
+}
+.services .services-content .image:after {
+  content: "";
+  position:absolute;
+  width: 33.33%;
+  height: 120%;
+  right: 0;
+  top: -10%;
+  background-color: #333;
+  z-index: -1;
+
+}
+@media (max-width:1199px) {
+  .services .services-content .image {
+    display: none;
+  }
+}
+/* end services */
+/* start portfolio */
+.portfolio {
+  padding-top: 60px;
+  padding-bottom  : 60px;
+  background-color: #c7c7c7;
+}
+.portfolio .container {
+  background-color: #c7c7c7;
+}
+.portfolio .container .special-heading {
+  color: white;
+}
+.portfolio .container .portfolio-parts {
+  margin-top:100px ;
+  display: grid;
+  grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+  grid-gap: 30px;
+}
+.portfolio-parts .part {
+  background-color: white;
+}
+.part img {
+  width: 100%;
+}
+.portfolio-parts .text {
+  padding: 20px;
+}
+.portfolio-parts .text h3 {
+  margin: 0;
+}
+.portfolio-parts .text p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+@media (max-width:767px) {
+  .portfolio .text {
+    text-align: center;
+  }
+}
+/* end portfolio */
+/* start about */
+.about {
+  padding-top: 60px;
+  padding-bottom  : 60px;
+}
+.about .about-parts {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width:991px) {
+  .about .about-parts {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about .about-parts .image + .text{
+    margin-left: 0px;
+  }
+  /* the most important note u will ever here today is that if u just do it like 
+  .about .about-parts  .text{
+    margin-left: 0px;
+  }
+  it will not change because the selector specificity will be only (0,3,0) and down u will find the same element with 
+  selector specificity (0,3,0) and it will over ride 
+  but if u do it like the following 
+  .about .about-parts .image + .text{
+    margin-left: 0px;
+  } it will work probably  
+  */
+
+  .about .about-parts .image::after , 
+  .about .about-parts .image::before{
+    display: none;
+  }
+  .about .about-parts .image img {
+    margin-bottom: 60px;
+  }
+
+}
+.about .about-parts .image {
+  position: relative;
+}
+.about  .image::after {
+  position: absolute;
+  content: " ";
+  width: 80%;
+  height: 100%;
+  top: -10%;
+  right: -60%;
+  background-color: var(--main-color);
+  clip-path: polygon(0 0 , 40% 0 , 40% 78% , 100% 78% , 100% 100% , 0 100% );
+  z-index: -1;
+}
+.about .image::before {
+  position: absolute;
+  content: " ";
+  width: 33%;
+  height: 120%;
+  top: -10%;
+  left: -15.15%;
+  background-color: #ebeced;
+  z-index: -1;
+}
+
+.about .about-parts .text{
+  flex: 1;
+  margin-left: 200px;
+}
+.about .about-parts .text p:first-of-type {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+.about .about-parts .text hr {
+  width: 50%;
+  border-color: var(--main-color);
+  display: inline-block;
+}
+.about .about-parts .text p:last-of-type {
+line-height: 2;
+color: #777;
+}
+ 
+/* end about */
+/* start contact */
+.contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+.contact .container .special-heading {
+  color: #c7c7c7;
+}
+.contact .container .text {
+  padding: 60px 0;
+}
+.contact .container .text p {
+  color: var(--secendary-color);
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+.contact .container .text a {
+  color: var(--main-color);
+  font-size: 35px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.contact .container .text .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.contact .container .text .social i {
+  margin-left: 10px;
+  color: var(--secendary-color);
+
+}
+@media (max-width:767px) {
+  .contact .container .text a ,
+  .contact .container .text p {
+    font-size: 25px;
+  }
+  .contact .container .text .social {
+    font-size: 12px;
+  }
+
+}
+
+
+
+
+
+/* end contact */
+/* Start Footer */
+.footer {
+  background-color: var(--secendary-color);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+.footer span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+/* End Footer */
